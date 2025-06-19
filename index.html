@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🤖 AI Mental Health Chatbot</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 0 auto; padding: 20px; }
+        input { width: 70%; padding: 10px; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; }
+        .chat-box { margin-top: 20px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🤖 AI Mental Health Chatbot</h1>
+    <form method="POST">
+        <input type="text" name="user_input" placeholder="How are you feeling?" required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if response %}
+    <div class="chat-box">
+        <p><strong>You:</strong> {{ request.form["user_input"] }}</p>
+        <p><strong>Bot:</strong> {{ response["response"] }}</p>
+        <p><strong>Emotion Detected:</strong> {{ response["emotion"] }}</p>
+        <p><strong>Tip:</strong> {{ response["tip"] }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
