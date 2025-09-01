@@ -3,7 +3,7 @@ from chatbot_model import get_chatbot_response
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
+
 def home():
     chatbot_response = None
     if request.method == "POST":
@@ -13,3 +13,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
